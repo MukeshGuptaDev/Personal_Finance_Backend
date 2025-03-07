@@ -4,6 +4,7 @@ import com.personalfinanceapp.dto.ExpenseDTO;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.time.LocalDate;
 import java.util.Date;
 @Data
 @Entity
@@ -14,7 +15,8 @@ public class Expense {
 
     private String category;
     private Double amount;
-    private Date date;
+
+    private LocalDate date;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")

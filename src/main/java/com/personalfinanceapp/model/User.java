@@ -13,8 +13,12 @@ public class User {
     private Long id;
 
     private String username;
+    @Column(unique = true, nullable = true  )
+    private String email;
     private String password;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Expense> expenses;
+
+
 }
